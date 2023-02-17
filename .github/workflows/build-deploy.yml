@@ -47,7 +47,6 @@ jobs:
               run: npm run test -- --configuration production
 
             - name: Semantic Release
-                uses: cycjimmy/semantic-release-action@v3
-                env:
-                    GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
-
+              uses: cycjimmy/semantic-release-action@v3
+              env:
+                  GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
