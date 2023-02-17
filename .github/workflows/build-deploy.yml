@@ -49,4 +49,4 @@ jobs:
             - name: Semantic Release
               uses: cycjimmy/semantic-release-action@v3
               env:
-                  GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
