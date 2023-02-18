@@ -8,7 +8,7 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "lint": "ng lint",
-        "deploy": "ng deploy --base-href=/nooblion-commerce/ --no-silent"
+        "deploy": "ng deploy --base-href=/nooblion-commerce/ --name='Noob Lion Commerce Deploy' --email=nooblioncommerce@gmail.com"
     },
     "private": true,
     "dependencies": {
