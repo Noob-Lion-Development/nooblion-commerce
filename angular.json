@@ -94,7 +94,8 @@
                 "deploy": {
                     "builder": "angular-cli-ghpages:deploy",
                     "options": {
-                        "baseHref": "/nooblion-commerce/"
+                        "baseHref": "/nooblion-commerce/",
+                        "noSilent": "true"
                     }
                 }
             }
