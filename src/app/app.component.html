@@ -1,13 +1,5 @@
 <div class="container">
-    <nbl-nav></nbl-nav>
-    <nbl-title [titleText]="'Noob Lion Commerce'"></nbl-title>
+    <nbl-nav [navigationItems]="NAVIGATION_ITEMS"></nbl-nav>
     <router-outlet></router-outlet>
 </div>
-
-<div>
-    <nbl-product-card></nbl-product-card>
-</div>
-
-<div>
-    <nbl-footer></nbl-footer>
-</div>
+<nbl-footer></nbl-footer>
