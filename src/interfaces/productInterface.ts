@@ -1,4 +1,4 @@
-interface Product{
+export interface Product{
     imageURL: string;
     productName: string;
     productDetails?: string; //optional property
