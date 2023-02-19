@@ -10,8 +10,24 @@ import { ProductCardComponent } from 'src/components/product-card/product-card.c
 @Component({
     selector: 'nbl-app',
     standalone: true,
-    imports: [CommonModule, RouterOutlet, NavComponent, TitleComponent, FooterComponent, ProductCardComponent],
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        NavComponent,
+        TitleComponent,
+        FooterComponent,
+        ProductCardComponent,
+    ],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
 })
-export class AppComponent {}
+export class AppComponent {
+    navigationItems = [
+        { name: 'Home', link: '' },
+        { name: 'About', link: '/about' },
+        { name: 'Store', link: '/store' },
+        { name: 'Cart', link: '/cart' },
+        { name: 'Test Page', link: '/testpage' },
+    ];
+    brandLink = '';
+}
