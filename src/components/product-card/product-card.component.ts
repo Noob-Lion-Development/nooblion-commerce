@@ -13,37 +13,18 @@ import { ShoppingCartService } from 'src/services/shopping-cart.service';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
-    /*
-    THERE NEEDS TO
+    constructor(productService: ProductService){}
 
-    constructor(private productService: ProductService){}
-
-    products: Product[] = [];
-
-    getProducts(): void{
-        this.products = this.productService.getProducts();
-    }
-
-    ngOnInit(): void {
-        this.getProducts();
-    }
-    */
-
-
-
-    @Input() product?: Product;
-    @Input() imageURL = 'assets/default.png';
-    @Input() productName = 'Product Name Not Found';
-    @Input() productDetails = 'No Product Description';
-    @Input() productPrice = 0.00;
-    @Input() shippingPrice = 0.00;
-    @Input() feesPrice = 0.00;
-    @Input() totalPrice = this.productPrice + this.shippingPrice + this.feesPrice;
 
     addToCart(){
         const shoppingCartService = new ShoppingCartService();
-        // TODO: this.productName will need to be replaced with calling this.product.productName when the product list component is built
-        shoppingCartService.onAddToCartClicked(this.productName);
+        shoppingCartService.onAddToCartClicked(this.product.productName);
     }
+
+    findTotalValue(){
+        return this.product.productPrice + this.product.shippingPrice + this.product.feesPrice;
+    }
+
+    @Input() product!: Product;
 
 }
