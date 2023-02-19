@@ -4,22 +4,29 @@
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
+            data-bs-target="#navbar"
+            aria-controls="navbar"
             aria-expanded="false"
             aria-label="Toggle navigation"
         >
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a [routerLink]="brandLink"
+        <a (click)="handleBrandNavigation()" [routerLink]="brandLink"
             ><ng-content select="[brand]"></ng-content
         ></a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" *ngFor="let item of navigationItems">
-                    <a class="nav-link" [routerLink]="item.link">{{
-                        item.name
-                    }}</a>
+                    <a
+                        class="nav-link"
+                        [ngClass]="{ active: item.link === activeLink }"
+                        [attr.aria-current]="
+                            item.link === activeLink ? 'page' : null
+                        "
+                        [routerLink]="item.link"
+                        (click)="handleNavigation(item.link)"
+                        >{{ item.name }}</a
+                    >
                 </li>
             </ul>
             <form class="d-flex" role="search">

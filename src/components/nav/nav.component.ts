@@ -13,4 +13,20 @@ import { RouterLink } from '@angular/router';
 export class NavComponent {
     @Input() navigationItems: NavigationItem[] = [];
     @Input() brandLink?: string;
+
+    activeLink: string;
+
+    constructor() {
+        this.activeLink = '';
+    }
+
+    handleBrandNavigation() {
+        if (this.brandLink) {
+            this.activeLink = this.brandLink;
+        }
+    }
+
+    handleNavigation(link: string) {
+        this.activeLink = link;
+    }
 }
