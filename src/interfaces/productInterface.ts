@@ -5,8 +5,6 @@ export interface Product{
     productPrice: number;
     shippingPrice: number;
     feesPrice: number;
-}
 
-function findTotalValue(productObj: Product){
-    return productObj.productPrice + productObj.shippingPrice + productObj.feesPrice;
+
 }

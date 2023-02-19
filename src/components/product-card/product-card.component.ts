@@ -1,6 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ProductService } from 'src/services/product.service';
+import { Product } from 'src/interfaces/productInterface';
+import { ShoppingCartService } from 'src/services/shopping-cart.service';
+
 @Component({
   selector: 'nbl-product-card',
   standalone: true,
@@ -9,11 +13,17 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
-    @Input() imageURL = 'assets/default.png';
-    @Input() productName = 'Product Name Not Found';
-    @Input() productDetails = 'No Product Description';
-    @Input() productPrice = 0.00;
-    @Input() shippingPrice = 0.00;
-    @Input() feesPrice = 0.00;
-    @Input() totalPrice = this.productPrice + this.shippingPrice + this.feesPrice;
+
+
+    addToCart(){
+        const shoppingCartService = new ShoppingCartService();
+        shoppingCartService.onAddToCartClicked(this.product.productName);
+    }
+
+    findTotalValue(){
+        return this.product.productPrice + this.product.shippingPrice + this.product.feesPrice;
+    }
+
+    @Input() product!: Product;
+
 }
