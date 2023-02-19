@@ -13,7 +13,7 @@ import { ShoppingCartService } from 'src/services/shopping-cart.service';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
-    constructor(productService: ProductService){}
+
 
 
     addToCart(){
