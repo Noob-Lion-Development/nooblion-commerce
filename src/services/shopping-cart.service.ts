@@ -6,7 +6,7 @@ import { Product } from 'src/interfaces/productInterface';
 })
 export class ShoppingCartService {
 
-  constructor() { }
+  //constructor() { }
 
   onAddToCartClicked(productName: string){
     alert('You have added ' + productName + ' To your cart!');
