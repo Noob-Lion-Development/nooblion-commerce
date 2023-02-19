@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
-import { NavigationItem } from './navigationItem';
+import { NavigationItem } from '../../interfaces/navigationItem';
 import { RouterLink } from '@angular/router';
 
 @Component({
