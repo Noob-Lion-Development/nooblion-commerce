@@ -1,5 +1,7 @@
 <div class="container">
-    <nbl-nav [navigationItems]="NAVIGATION_ITEMS"></nbl-nav>
+    <nbl-nav [navigationItems]="navigationItems" [brandLink]="brandLink"
+        ><img brand src="assets/doubloon.png"
+    /></nbl-nav>
     <router-outlet></router-outlet>
 </div>
 <nbl-footer></nbl-footer>

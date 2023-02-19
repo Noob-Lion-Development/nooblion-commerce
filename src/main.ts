@@ -9,8 +9,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { TestpageComponent } from './pages/testpage/testpage.component';
 
 export const ROUTES: Route[] = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
+    { path: '', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'store', component: StoreComponent },
     { path: 'cart', component: CartComponent },

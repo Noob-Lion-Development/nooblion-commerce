@@ -12,4 +12,5 @@ import { RouterLink } from '@angular/router';
 })
 export class NavComponent {
     @Input() navigationItems: NavigationItem[] = [];
+    @Input() brandLink?: string;
 }
