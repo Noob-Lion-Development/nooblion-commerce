@@ -15,7 +15,6 @@ import { ShoppingCartService } from 'src/services/shopping-cart.service';
 export class ProductCardComponent {
 
 
-
     addToCart(){
         const shoppingCartService = new ShoppingCartService();
         shoppingCartService.onAddToCartClicked(this.product.productName);

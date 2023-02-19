@@ -1,49 +1,46 @@
-<div class="container py-5">
-  <div>
-    <div class="col-md-8 col-lg-6 col-xl-4">
-      <div class="card">
-        <img src="{{product.imageURL}}"
-          class="card-img-top" alt="spongebob chair" />
-        <div class="card-body">
-          <div class="text-center">
-            <h5 class="card-title">{{product.productName}}</h5>
-            <p class="text-muted mb-4">{{product.productDetails}}</p>
-          </div>
-          <div>
-            <div class="d-flex justify-content-between">
-              <span>Cost</span><span>{{product.productPrice | currency}}</span>
-            </div>
-            <div class="d-flex justify-content-between">
-              <span>Shipping</span><span>{{product.shippingPrice | currency}}</span>
-            </div>
-            <div class="d-flex justify-content-between">
-              <span>Additional Fees</span><span>{{product.feesPrice | currency}}</span>
-            </div>
-          </div>
-          <div class="d-flex justify-content-between total font-weight-bold mt-4">
-            <span>Total</span><span>{{findTotalValue() | currency}}</span>
-          </div>
-          <hr/>
-          <div class="row">
-            <div class="col-sm">
-                <button (click)="addToCart()" class="btn btn-primary">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="col-sm">
-                <button type="button" class="btn btn-secondary">
-                    View Details
-                </button>
-            </div>
-            <div class="col-sm">
-                <button type="button" class="btn btn-success">
-                    Buy Now
-                </button>
-            </div>
-          </div>
-        </div>
-      </div>
+
+<div class="card">
+<img src="{{product.imageURL}}"
+    class="card-img-top" alt="spongebob chair" />
+<div class="card-body">
+    <div class="text-center">
+    <h5 class="card-title">{{product.productName}}</h5>
+    <p class="text-muted mb-4">{{product.productDetails}}</p>
     </div>
-  </div>
+    <div>
+    <div class="d-flex justify-content-between">
+        <span>Cost</span><span>{{product.productPrice | currency}}</span>
+    </div>
+    <div class="d-flex justify-content-between">
+        <span>Shipping</span><span>{{product.shippingPrice | currency}}</span>
+    </div>
+    <div class="d-flex justify-content-between">
+        <span>Additional Fees</span><span>{{product.feesPrice | currency}}</span>
+    </div>
+    </div>
+    <div class="d-flex justify-content-between total font-weight-bold mt-4">
+    <span>Total</span><span>{{findTotalValue() | currency}}</span>
+    </div>
+    <hr/>
+    <div class="row">
+    <div class="col-sm">
+        <button (click)="addToCart()" class="btn btn-primary">
+            Add to Cart
+        </button>
+    </div>
+    <div class="col-sm">
+        <button type="button" class="btn btn-secondary">
+            View Details
+        </button>
+    </div>
+    <div class="col-sm">
+        <button type="button" class="btn btn-success">
+            Buy Now
+        </button>
+    </div>
+    </div>
 </div>
+</div>
+
+
 
