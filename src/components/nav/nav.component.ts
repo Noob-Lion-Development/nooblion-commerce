@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { NavigationItem } from './navigationItem';
 import { RouterLink } from '@angular/router';
 
@@ -16,12 +16,12 @@ export class NavComponent {
 
     activeLink: string;
 
-    constructor() {
-        this.activeLink = '';
+    constructor(private location: Location) {
+        this.activeLink = this.location.path();
     }
 
     handleBrandNavigation() {
-        if (this.brandLink) {
+        if (this.brandLink !== undefined) {
             this.activeLink = this.brandLink;
         }
     }

@@ -23,11 +23,11 @@ import { ProductCardComponent } from 'src/components/product-card/product-card.c
 })
 export class AppComponent {
     navigationItems = [
-        { name: 'Home', link: '/' },
+        { name: 'Home', link: '' },
         { name: 'About', link: '/about' },
         { name: 'Store', link: '/store' },
         { name: 'Cart', link: '/cart' },
         { name: 'Test Page', link: '/testpage' },
     ];
-    brandLink = '/';
+    brandLink = '';
 }
