@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitleComponent } from "../../components/title/title.component";
 import { ProductCardComponent } from "../../components/product-card/product-card.component";
@@ -18,6 +18,7 @@ export class TestpageComponent implements OnInit {
     name = 'Trevor';
     addStyle = true;
     products : Product[] = [];
+    @Output() productAddedToCart = new EventEmitter();
 
     constructor(private productService: ProductService){}
 

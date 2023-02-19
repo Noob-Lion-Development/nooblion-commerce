@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ProductService } from 'src/services/product.service';
 import { Product } from 'src/interfaces/productInterface';
 import { ShoppingCartService } from 'src/services/shopping-cart.service';
 
@@ -14,10 +13,9 @@ import { ShoppingCartService } from 'src/services/shopping-cart.service';
 })
 export class ProductCardComponent {
 
-
-    addToCart(){
-        const shoppingCartService = new ShoppingCartService();
-        shoppingCartService.onAddToCartClicked(this.product.productName);
+    constructor(private shoppingCartService: ShoppingCartService){}
+    addToCart(product: Product){
+        this.shoppingCartService.onAddToCartClicked(product);
     }
 
     findTotalValue(){
