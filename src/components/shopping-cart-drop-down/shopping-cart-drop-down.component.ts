@@ -14,13 +14,19 @@ export class ShoppingCartDropDownComponent {
 
     cartProducts : Product[] = [];
     totalPrice : number = 0;
-    constructor(private shoppingCartService: ShoppingCartService){}
+
+    constructor(private shoppingCartService: ShoppingCartService){
+
+    }
 
     ngOnInit(): void {
+        this.shoppingCartService.getShoppingCartTotal();
         this.shoppingCartService.getShoppingCart().subscribe(data => this.cartProducts=data);
+
     }
 
-    calculateTotalPrice(){
-        this.totalPrice = this.cartProducts.map(a => a.productPrice).reduce((a,b) => a + b, 0);
+    getTotal(){
+        return this.shoppingCartService.getShoppingCartTotal().subscribe();
     }
+
 }
