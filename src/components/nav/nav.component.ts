@@ -3,10 +3,12 @@ import { CommonModule, Location } from '@angular/common';
 import { NavigationItem } from '../../interfaces/navigationItem';
 import { RouterLink } from '@angular/router';
 
+import { ShoppingCartDropDownComponent } from '../shopping-cart-drop-down/shopping-cart-drop-down.component';
+
 @Component({
     selector: 'nbl-nav',
     standalone: true,
-    imports: [CommonModule, RouterLink],
+    imports: [CommonModule, RouterLink, ShoppingCartDropDownComponent],
     templateUrl: './nav.component.html',
     styleUrls: ['./nav.component.css'],
 })
