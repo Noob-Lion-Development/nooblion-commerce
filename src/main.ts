@@ -7,6 +7,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { StoreComponent } from './pages/store/store.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { TestpageComponent } from './pages/testpage/testpage.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 export const ROUTES: Route[] = [
     { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ export const ROUTES: Route[] = [
     { path: 'store', component: StoreComponent },
     { path: 'cart', component: CartComponent },
     { path: 'testpage', component: TestpageComponent },
+    { path: 'product/:id', component: ProductDetailComponent },
 ];
 
 bootstrapApplication(AppComponent, {
