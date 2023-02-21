@@ -4,6 +4,7 @@ import { Product } from 'src/interfaces/productInterface';
 import { ProductService } from 'src/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { TitleComponent } from '../title/title.component';
+import { ShoppingCartService } from 'src/services/shopping-cart.service';
 
 @Component({
     selector: 'nbl-product-detail',
@@ -17,7 +18,8 @@ export class ProductDetailComponent implements OnInit {
 
     constructor(
         private productService: ProductService,
-        private activatedRoute: ActivatedRoute
+        private activatedRoute: ActivatedRoute,
+        private shoppingCartService: ShoppingCartService
     ) {}
 
     ngOnInit(): void {
@@ -31,5 +33,9 @@ export class ProductDetailComponent implements OnInit {
                     });
             }
         });
+    }
+
+    addToCart(product: Product): void {
+        this.shoppingCartService.addProductToCart(product);
     }
 }

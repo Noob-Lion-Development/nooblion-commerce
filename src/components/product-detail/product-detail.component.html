@@ -13,12 +13,14 @@
                         {{ product.productPrice | currency }}
                     </h2>
                     <p class="card-text">
-                        Shipping - {{ product.shippingPrice | currency }}
+                        Shipping: {{ product.shippingPrice | currency }}
                         <br />
-                        Additional Fees {{ product.feesPrice | currency }}
+                        Additional Fees: {{ product.feesPrice | currency }}
                     </p>
                 </div>
-                <button class="btn btn-primary">Add To Cart</button>
+                <button class="btn btn-primary" (click)="addToCart(product)">
+                    Add To Cart
+                </button>
             </div>
         </div>
         <div class="row mt-4">
