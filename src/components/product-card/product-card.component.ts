@@ -15,7 +15,7 @@ export class ProductCardComponent {
 
     constructor(private shoppingCartService: ShoppingCartService){}
     addToCart(product: Product){
-        this.shoppingCartService.onAddToCartClicked(product);
+        this.shoppingCartService.addProductToCart(product);
     }
 
     findTotalValue(){
