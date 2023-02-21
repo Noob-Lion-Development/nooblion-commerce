@@ -20,13 +20,12 @@ export class ShoppingCartDropDownComponent {
     }
 
     ngOnInit(): void {
-        this.shoppingCartService.getShoppingCartTotal();
         this.shoppingCartService.getShoppingCart().subscribe(data => this.cartProducts=data);
 
     }
 
     getTotal(){
-        return this.shoppingCartService.getShoppingCartTotal().subscribe();
+        return this.cartProducts.reduce((sum, current) => sum + current.productPrice, 0);
     }
 
 }
