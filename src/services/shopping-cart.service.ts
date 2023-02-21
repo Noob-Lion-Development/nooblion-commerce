@@ -7,7 +7,6 @@ import { Product } from 'src/interfaces/productInterface';
 })
 export class ShoppingCartService {
 
-  //constructor() { }
   products: Product[] = [];
 
    onAddToCartClicked(product: Product){
