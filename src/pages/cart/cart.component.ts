@@ -14,7 +14,7 @@ import { ProductCardComponent } from "../../components/product-card/product-card
     imports: [CommonModule, TitleComponent, ProductCardComponent]
 })
 export class CartComponent implements OnInit{
-    cartProducts : Product[] = [];
+    products: Product[] = [];
 
     constructor(private shoppingCartService: ShoppingCartService){}
 
