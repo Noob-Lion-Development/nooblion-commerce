@@ -13,7 +13,7 @@ import { Product } from 'src/interfaces/productInterface';
 export class ShoppingCartDropDownComponent {
 
     cartProducts : Product[] = [];
-    totalPrice : number = 0;
+    totalPrice = 0;
 
     constructor(private shoppingCartService: ShoppingCartService){
 
