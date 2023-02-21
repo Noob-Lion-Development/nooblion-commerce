@@ -1,1 +1,9 @@
 <nbl-title [titleText]="'Cart'"></nbl-title>
+<div>
+    <div class="row">
+        <div class="col-sm" *ngFor="let product of products">
+            <nbl-product-card [product]="product"></nbl-product-card>
+        </div>
+
+    </div>
+</div>

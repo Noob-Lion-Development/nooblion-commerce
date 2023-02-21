@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { Product } from 'src/interfaces/productInterface';
 
 @Injectable({
@@ -6,9 +7,15 @@ import { Product } from 'src/interfaces/productInterface';
 })
 export class ShoppingCartService {
 
-  //constructor() { }
+  products: Product[] = [];
 
-  onAddToCartClicked(productName: string){
-    alert('You have added ' + productName + ' To your cart!');
+   addProductToCart(product: Product){
+        alert('You have added ' + product.productName + ' To your cart!');
+        this.products.push(product);
+        alert('You have added ' + this.products.length + ' items to your cart!');
+  }
+
+  getShoppingCart(){
+    return of(this.products);
   }
 }
