@@ -13,18 +13,19 @@ import { ShoppingCartService } from 'src/services/shopping-cart.service';
     styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent {
+    @Input() product!: Product;
+
     constructor(private shoppingCartService: ShoppingCartService) {}
-    addToCart(product: Product) {
+
+    addToCart(product: Product): void {
         this.shoppingCartService.addProductToCart(product);
     }
 
-    findTotalValue() {
+    findTotalValue(): number {
         return (
             this.product.productPrice +
             this.product.shippingPrice +
             this.product.feesPrice
         );
     }
-
-    @Input() product!: Product;
 }

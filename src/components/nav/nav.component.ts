@@ -22,13 +22,13 @@ export class NavComponent {
         this.activeLink = this.location.path();
     }
 
-    handleBrandNavigation() {
+    handleBrandNavigation(): void {
         if (this.brandLink !== undefined) {
             this.activeLink = this.brandLink;
         }
     }
 
-    handleNavigation(link: string) {
+    handleNavigation(link: string): void {
         this.activeLink = link;
     }
 }
