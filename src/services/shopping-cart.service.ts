@@ -1,21 +1,18 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Product } from 'src/interfaces/productInterface';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class ShoppingCartService {
+    products: Product[] = [];
 
-  products: Product[] = [];
-
-   addProductToCart(product: Product){
-        alert('You have added ' + product.productName + ' To your cart!');
+    addProductToCart(product: Product): void {
         this.products.push(product);
-        alert('You have added ' + this.products.length + ' items to your cart!');
-  }
+    }
 
-  getShoppingCart(){
-    return of(this.products);
-  }
+    getShoppingCart(): Observable<Product[]> {
+        return of(this.products);
+    }
 }

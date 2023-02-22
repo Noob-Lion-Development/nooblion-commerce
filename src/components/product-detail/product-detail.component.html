@@ -1,0 +1,31 @@
+<div *ngIf="product" class="container-md mt-4">
+    <div class="row">
+        <div class="col">
+            <img class="img-fluid" [src]="product.imageURL" />
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header fs-1">
+                    <h1>{{ product.productName }}</h1>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">
+                        {{ product.productPrice | currency }}
+                    </h2>
+                    <p class="card-text">
+                        Shipping: {{ product.shippingPrice | currency }}
+                        <br />
+                        Additional Fees: {{ product.feesPrice | currency }}
+                    </p>
+                </div>
+                <button class="btn btn-primary" (click)="addToCart(product)">
+                    Add To Cart
+                </button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <h3>Description</h3>
+            <p>{{ product.productDetails }}</p>
+        </div>
+    </div>
+</div>
