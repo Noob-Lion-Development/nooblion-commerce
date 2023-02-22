@@ -9,11 +9,7 @@ export class ShoppingCartService {
     products: Product[] = [];
 
     addProductToCart(product: Product): void {
-        alert('You have added ' + product.productName + ' To your cart!');
         this.products.push(product);
-        alert(
-            'You have added ' + this.products.length + ' items to your cart!'
-        );
     }
 
     getShoppingCart(): Observable<Product[]> {
