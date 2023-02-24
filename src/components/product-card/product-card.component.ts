@@ -20,12 +20,4 @@ export class ProductCardComponent {
     addToCart(product: Product): void {
         this.shoppingCartService.addProductToCart(product);
     }
-
-    findTotalValue(): number {
-        return (
-            this.product.productPrice +
-            this.product.shippingPrice +
-            this.product.feesPrice
-        );
-    }
 }
