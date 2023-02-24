@@ -12,11 +12,6 @@
                     <h2 class="card-title">
                         {{ product.productPrice | currency }}
                     </h2>
-                    <p class="card-text">
-                        Shipping: {{ product.shippingPrice | currency }}
-                        <br />
-                        Additional Fees: {{ product.feesPrice | currency }}
-                    </p>
                 </div>
                 <button class="btn btn-primary" (click)="addToCart(product)">
                     Add To Cart

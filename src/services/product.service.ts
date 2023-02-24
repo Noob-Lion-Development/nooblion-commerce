@@ -14,8 +14,6 @@ export class ProductService {
             productDetails: 'These are egg whites',
             imageURL: 'assets/default.png',
             productPrice: 1.12,
-            shippingPrice: 0.96,
-            feesPrice: 0.0,
         },
         {
             id: '1',
@@ -23,16 +21,12 @@ export class ProductService {
             productDetails: 'These are egg blacks',
             imageURL: 'assets/default.png',
             productPrice: 400.12,
-            shippingPrice: 7000.96,
-            feesPrice: 45096.0,
         },
         {
             id: '2',
             productName: 'Mushroom Vase',
             imageURL: 'assets/default.png',
             productPrice: 16.09,
-            shippingPrice: 5.0,
-            feesPrice: 4.0,
         },
     ];
 
