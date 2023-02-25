@@ -18,46 +18,42 @@ export class DarkModeTogglerComponent {
             document.documentElement.setAttribute('data-bs-theme', theme);
         };
 
-        (() => {
-            'use strict';
+        setTheme();
 
-            setTheme();
+        const showActiveTheme = (theme: string): void => {
+            const activeThemeIcon = document.querySelector(
+                '.theme-icon-active use'
+            ) as SVGUseElement;
+            const btnToActive = document.querySelector(
+                `[data-bs-theme-value="${theme}"]`
+            ) as HTMLElement;
+            const svgOfActiveBtn = btnToActive
+                .querySelector('svg use')
+                ?.getAttribute('href');
+            document
+                .querySelectorAll('[data-bs-theme-value]')
+                .forEach((element) => {
+                    element.classList.remove('active');
+                });
 
-            const showActiveTheme = (theme: string): void => {
-                const activeThemeIcon = document.querySelector(
-                    '.theme-icon-active use'
-                ) as SVGUseElement;
-                const btnToActive = document.querySelector(
-                    `[data-bs-theme-value="${theme}"]`
-                ) as HTMLElement;
-                const svgOfActiveBtn = btnToActive
-                    .querySelector('svg use')
-                    ?.getAttribute('href');
-                document
-                    .querySelectorAll('[data-bs-theme-value]')
-                    .forEach((element) => {
-                        element.classList.remove('active');
+            btnToActive.classList.add('active');
+            activeThemeIcon.setAttribute('href', svgOfActiveBtn as string);
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            showActiveTheme(localStorage.getItem('theme') || 'light');
+            document
+                .querySelectorAll('[data-bs-theme-value]')
+                .forEach((toggle) => {
+                    toggle.addEventListener('click', () => {
+                        const theme = toggle.getAttribute(
+                            'data-bs-theme-value'
+                        ) as string;
+                        localStorage.setItem('theme', theme);
+                        setTheme();
+                        showActiveTheme(theme);
                     });
-
-                btnToActive.classList.add('active');
-                activeThemeIcon.setAttribute('href', svgOfActiveBtn as string);
-            };
-
-            window.addEventListener('DOMContentLoaded', () => {
-                showActiveTheme(localStorage.getItem('theme') || 'light');
-                document
-                    .querySelectorAll('[data-bs-theme-value]')
-                    .forEach((toggle) => {
-                        toggle.addEventListener('click', () => {
-                            const theme = toggle.getAttribute(
-                                'data-bs-theme-value'
-                            ) as string;
-                            localStorage.setItem('theme', theme);
-                            setTheme();
-                            showActiveTheme(theme);
-                        });
-                    });
-            });
-        })();
+                });
+        });
     }
 }
