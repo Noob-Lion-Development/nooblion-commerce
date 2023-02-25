@@ -6,6 +6,7 @@ import { NavComponent } from 'src/components/nav/nav.component';
 import { FooterComponent } from 'src/components/footer/footer.component';
 import { TitleComponent } from 'src/components/title/title.component';
 import { ProductCardComponent } from 'src/components/product-card/product-card.component';
+import { DarkModeTogglerComponent } from 'src/components/dark-mode-toggler/dark-mode-toggler.component';
 
 @Component({
     selector: 'nbl-app',
@@ -17,6 +18,8 @@ import { ProductCardComponent } from 'src/components/product-card/product-card.c
         TitleComponent,
         FooterComponent,
         ProductCardComponent,
+        DarkModeTogglerComponent,
+        DarkModeTogglerComponent,
     ],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
