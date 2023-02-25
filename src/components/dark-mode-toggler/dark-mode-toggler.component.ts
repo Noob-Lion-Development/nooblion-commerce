@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,52 +8,24 @@ import { CommonModule } from '@angular/common';
     templateUrl: './dark-mode-toggler.component.html',
     styleUrls: ['./dark-mode-toggler.component.css'],
 })
-export class DarkModeTogglerComponent {
+export class DarkModeTogglerComponent implements OnInit {
+    DEFAULT_THEME = 'dark';
+
+    ngOnInit(): void {
+        const currentTheme =
+            localStorage.getItem('theme') ?? this.DEFAULT_THEME;
+        this.setTheme(currentTheme);
+    }
+
     toggleDarkMode(): void {
-        const setTheme = (): void => {
-            const currentTheme =
-                document.documentElement.getAttribute('data-bs-theme');
-            const theme = currentTheme === 'dark' ? 'light' : 'dark';
-            localStorage.setItem('theme', theme);
-            document.documentElement.setAttribute('data-bs-theme', theme);
-        };
+        const currentTheme =
+            document.documentElement.getAttribute('data-bs-theme');
+        const toggledTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        this.setTheme(toggledTheme);
+    }
 
-        setTheme();
-
-        const showActiveTheme = (theme: string): void => {
-            const activeThemeIcon = document.querySelector(
-                '.theme-icon-active use'
-            ) as SVGUseElement;
-            const btnToActive = document.querySelector(
-                `[data-bs-theme-value="${theme}"]`
-            ) as HTMLElement;
-            const svgOfActiveBtn = btnToActive
-                .querySelector('svg use')
-                ?.getAttribute('href');
-            document
-                .querySelectorAll('[data-bs-theme-value]')
-                .forEach((element) => {
-                    element.classList.remove('active');
-                });
-
-            btnToActive.classList.add('active');
-            activeThemeIcon.setAttribute('href', svgOfActiveBtn as string);
-        };
-
-        window.addEventListener('DOMContentLoaded', () => {
-            showActiveTheme(localStorage.getItem('theme') || 'light');
-            document
-                .querySelectorAll('[data-bs-theme-value]')
-                .forEach((toggle) => {
-                    toggle.addEventListener('click', () => {
-                        const theme = toggle.getAttribute(
-                            'data-bs-theme-value'
-                        ) as string;
-                        localStorage.setItem('theme', theme);
-                        setTheme();
-                        showActiveTheme(theme);
-                    });
-                });
-        });
+    setTheme(theme: string): void {
+        localStorage.setItem('theme', theme);
+        document.documentElement.setAttribute('data-bs-theme', theme);
     }
 }
