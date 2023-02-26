@@ -24,7 +24,7 @@ export class ShoppingCartDropDownComponent implements OnInit {
 
     getTotal(): number {
         return this.cartProducts.reduce(
-            (sum, current) => sum + current.productPrice,
+            (sum, current) => sum + current.price,
             0
         );
     }
