@@ -1,1 +1,7 @@
-<nbl-title [titleText]="'Store'"></nbl-title>
+<div>
+    <div class="row justify-content-md-center">
+        <div class="col" *ngFor="let product of products">
+            <nbl-product-card [product]="product"></nbl-product-card>
+        </div>
+    </div>
+</div>
