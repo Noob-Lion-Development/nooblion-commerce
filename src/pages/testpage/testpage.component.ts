@@ -5,13 +5,14 @@ import { ProductCardComponent } from "../../components/product-card/product-card
 
 import { ProductService } from 'src/services/product.service';
 import { Product } from 'src/interfaces/productInterface';
+import { ProductFormComponent } from "../../components/product-form/product-form.component";
 
 @Component({
     selector: 'nbl-testpage',
     standalone: true,
     templateUrl: './testpage.component.html',
     styleUrls: ['./testpage.component.css'],
-    imports: [CommonModule, TitleComponent, ProductCardComponent]
+    imports: [CommonModule, TitleComponent, ProductCardComponent, ProductFormComponent]
 })
 export class TestpageComponent implements OnInit {
 
