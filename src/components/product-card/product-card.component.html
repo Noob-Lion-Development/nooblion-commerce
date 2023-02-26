@@ -2,17 +2,16 @@
     <img
         src="{{ product.imageURL }}"
         class="card-img-top"
-        alt="{{ product.productName }}"
+        alt="{{ product.name }}"
     />
     <div class="card-body">
         <div class="text-center">
-            <h5 class="card-title">{{ product.productName }}</h5>
-            <p class="text-muted mb-4">{{ product.productDetails }}</p>
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="text-muted mb-4">{{ product.details }}</p>
         </div>
         <div>
             <div class="d-flex justify-content-between">
-                <span>Cost</span
-                ><span>{{ product.productPrice | currency }}</span>
+                <span>Cost</span><span>{{ product.price | currency }}</span>
             </div>
         </div>
         <hr />

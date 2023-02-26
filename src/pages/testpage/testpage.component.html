@@ -1,4 +1,5 @@
 <nbl-title [titleText]="'This is a title'"></nbl-title>
+<nbl-product-form></nbl-product-form>
 <p [ngClass]="{ 'card card-body bg-danger text-white': addStyle }">
     Welcome home!
 </p>
@@ -8,7 +9,5 @@
         <div class="col-sm" *ngFor="let product of products">
             <nbl-product-card [product]="product"></nbl-product-card>
         </div>
-
     </div>
 </div>
-

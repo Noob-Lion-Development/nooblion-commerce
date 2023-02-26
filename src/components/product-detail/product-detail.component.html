@@ -6,11 +6,11 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-header fs-1">
-                    <h1>{{ product.productName }}</h1>
+                    <h1>{{ product.name }}</h1>
                 </div>
                 <div class="card-body">
                     <h2 class="card-title">
-                        {{ product.productPrice | currency }}
+                        {{ product.price | currency }}
                     </h2>
                 </div>
                 <button class="btn btn-primary" (click)="addToCart(product)">
@@ -20,7 +20,7 @@
         </div>
         <div class="row mt-4">
             <h3>Description</h3>
-            <p>{{ product.productDetails }}</p>
+            <p>{{ product.details }}</p>
         </div>
     </div>
 </div>

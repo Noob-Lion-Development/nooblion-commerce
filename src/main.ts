@@ -8,6 +8,7 @@ import { StoreComponent } from './pages/store/store.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { TestpageComponent } from './pages/testpage/testpage.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { provideHttpClient } from '@angular/common/http';
 
 export const ROUTES: Route[] = [
     { path: '', component: HomeComponent },
@@ -19,5 +20,5 @@ export const ROUTES: Route[] = [
 ];
 
 bootstrapApplication(AppComponent, {
-    providers: [provideRouter(ROUTES)],
+    providers: [provideRouter(ROUTES), provideHttpClient()],
 });
