@@ -1,1 +1,6 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+
+html {
+    /* prevents page shifting when scrollbar shows/hides */
+    margin-left: calc(100vw - 100%);
+}
