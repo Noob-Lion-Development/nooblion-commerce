@@ -49,7 +49,7 @@ jobs:
               with:
                   type: "zip"
                   fileName: "nooblion-commerce.zip"
-                  path: "dist/nooblion-commerce"
+                  directory: "dist/nooblion-commerce"
 
             - name: Semantic Release
               env:
