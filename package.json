@@ -51,6 +51,9 @@
     "release": {
         "branches": [
             "main"
+        ],
+        "assets": [
+            "dist/nooblion-commerce"
         ]
     },
     "repository": {
