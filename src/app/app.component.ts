@@ -7,10 +7,13 @@ import { FooterComponent } from 'src/components/footer/footer.component';
 import { TitleComponent } from 'src/components/title/title.component';
 import { ProductCardComponent } from 'src/components/product-card/product-card.component';
 import { DarkModeTogglerComponent } from 'src/components/dark-mode-toggler/dark-mode-toggler.component';
+import { ToastContainerComponent } from "../components/toast-container/toast-container.component";
 
 @Component({
     selector: 'nbl-app',
     standalone: true,
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
     imports: [
         CommonModule,
         RouterOutlet,
@@ -20,9 +23,8 @@ import { DarkModeTogglerComponent } from 'src/components/dark-mode-toggler/dark-
         ProductCardComponent,
         DarkModeTogglerComponent,
         DarkModeTogglerComponent,
-    ],
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
+        ToastContainerComponent
+    ]
 })
 export class AppComponent {
     navigationItems = [
