@@ -53,7 +53,7 @@
             "main"
         ],
         "assets": [
-            "dist/nooblion-commerce.zip"
+            "dist/nooblion-commerce/nooblion-commerce.zip"
         ]
     },
     "repository": {
