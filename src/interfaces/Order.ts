@@ -7,8 +7,6 @@ export interface Order{
     * 1). We don't need an ID because Entity FW will handle that for us
     * 2). We are adding a cart object here that will keep track of our list of products that will eventually be added to the OrderItem table in the DB
     */
-
-    // TODO: figure out how I am going to push the products to the OrderItem table while knowing the order ID and quantity, may require restructuring shoppingCart interface
     OrderCompleted: Date;
     FirstName: string;
     LastName: string;
