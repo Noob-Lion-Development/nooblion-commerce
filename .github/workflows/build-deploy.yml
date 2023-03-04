@@ -44,6 +44,13 @@ jobs:
             - name: Lint
               run: npm run lint
 
+            - name: Create Archive
+              uses: thedoctor0/zip-release@0.7.2
+              with:
+                  type: "zip"
+                  fileName: "nooblion-commerce.zip"
+                  directory: "dist/nooblion-commerce"
+
             - name: Semantic Release
               env:
                   GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}

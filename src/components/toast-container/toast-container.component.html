@@ -1,0 +1,19 @@
+<div
+    aria-live="polite"
+    aria-atomic="true"
+    class="toast-container position-fixed top-0 end-0 p-3"
+>
+    <ngb-toast
+        *ngFor="let toast of pushedToasts"
+        class="mb-3"
+        [autohide]="getAutohide(toast)"
+        [delay]="getDelay(toast)"
+    >
+        <i
+            *ngIf="toast.icon"
+            class="bi pe-2"
+            [ngClass]="'bi-' + toast.icon"
+        ></i>
+        <strong>{{ toast.header }}</strong>
+    </ngb-toast>
+</div>
