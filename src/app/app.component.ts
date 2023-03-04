@@ -32,6 +32,7 @@ export class AppComponent {
         { name: 'About', link: '/about' },
         { name: 'Store', link: '/store' },
         { name: 'Cart', link: '/cart' },
+        { name: 'Orders', link: '/orders'},
         { name: 'Test Page', link: '/testpage' },
     ];
     brandLink = '';

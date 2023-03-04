@@ -7,6 +7,7 @@ import { AppComponent } from './app/app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { StoreComponent } from './pages/store/store.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { TestpageComponent } from './pages/testpage/testpage.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
@@ -19,6 +20,7 @@ export const ROUTES: Route[] = [
     { path: 'cart', component: CartComponent },
     { path: 'testpage', component: TestpageComponent },
     { path: 'product/:id', component: ProductDetailComponent },
+    { path: 'orders', component: OrdersComponent}
 ];
 
 bootstrapApplication(AppComponent, {
