@@ -1,7 +1,12 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">{{order.id}}</h5>
-        <p class="card-text">LOOP THROUGH ITEMS AND DISPLAY STUFF</p>
+        <h5 class="card-title badge bg-primary rounded-pill">Order Number: {{order.id}}</h5>
+        <p class="card-text">Order Completed: {{order.orderCompleted | date}}</p>
+        <p class="card-text">Shipped To: {{order.firstName}} {{order.lastName}} at
+            {{order.street}},
+            {{order.city}},
+            {{order.country}}
+        </p>
+        <a class="btn btn-primary">Order Details</a>
     </div>
-
 </div>

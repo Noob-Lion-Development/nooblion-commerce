@@ -6,10 +6,10 @@ export interface Order{
     * 2). We are adding a cart object here that will keep track of our list of products that will eventually be added to the OrderItem table in the DB
     */
     id: string;
-    OrderCompleted: Date;
-    FirstName: string;
-    LastName: string;
-    Country: string;
-    Street: string;
-    City: string;
+    orderCompleted: Date;
+    firstName: string;
+    lastName: string;
+    country: string;
+    street: string;
+    city: string;
 }

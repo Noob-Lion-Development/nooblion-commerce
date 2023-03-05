@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Order } from 'src/interfaces/Order';
 
 @Component({
   selector: 'nbl-order',
@@ -9,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent {
-
+    @Input() order!: Order;
 }
