@@ -45,7 +45,7 @@ jobs:
               run: npm run lint
 
             - name: Create Archive
-              uses: thedoctor0/zip-release@0.7.2
+              uses: thedoctor0/zip-release@0.7.1
               with:
                   type: "zip"
                   fileName: "nooblion-commerce.zip"
