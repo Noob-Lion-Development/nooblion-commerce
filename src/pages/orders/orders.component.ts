@@ -11,7 +11,7 @@ import { OrderService } from 'src/services/order.service';
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
-export class OrdersComponent {
+export class OrdersComponent implements OnInit{
     orders : Order[] = [];
 
     constructor(private orderService: OrderService){}
@@ -20,3 +20,4 @@ export class OrdersComponent {
         this.orderService.getOrders().subscribe(data => this.orders=data);
     }
 }
+
