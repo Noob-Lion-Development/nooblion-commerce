@@ -1,6 +1,6 @@
 <div class="container">
     <ul class="list-group">
-        <li class="list-group-item" *ngFor="let order of orders">
+        <li class="list-group-item" *ngFor="let order of ordersObj.orders">
             <nbl-order [order]="order"></nbl-order>
         </li>
     </ul>

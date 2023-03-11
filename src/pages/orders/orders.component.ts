@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Order } from 'src/interfaces/Order';
 import { OrderComponent } from 'src/components/order/order.component';
 import { OrderService } from 'src/services/order.service';
+import { OrderObject } from 'src/interfaces/OrderObject';
 
 @Component({
   selector: 'nbl-orders',
@@ -12,12 +12,15 @@ import { OrderService } from 'src/services/order.service';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit{
-    orders : Order[] = [];
+    ordersObj: OrderObject = {
+        orders : [],
+        orderItems : []
+    };
 
     constructor(private orderService: OrderService){}
 
     ngOnInit(): void {
-        this.orderService.getOrders().subscribe(data => this.orders=data);
+        this.orderService.getOrders().subscribe(data => this.ordersObj=data);
     }
 }
 
