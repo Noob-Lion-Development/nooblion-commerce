@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Order } from 'src/interfaces/Order';
+import { OrderItem } from 'src/interfaces/OrderItem';
 
 @Component({
   selector: 'nbl-order',
@@ -11,4 +12,5 @@ import { Order } from 'src/interfaces/Order';
 })
 export class OrderComponent {
     @Input() order!: Order;
+    @Input() orderItems: OrderItem[] = [];
 }

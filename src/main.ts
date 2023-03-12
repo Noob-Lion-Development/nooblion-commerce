@@ -12,6 +12,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { TestpageComponent } from './pages/testpage/testpage.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { provideHttpClient } from '@angular/common/http';
+import { OrderdetailsComponent } from './pages/orderdetails/orderdetails.component';
 
 export const ROUTES: Route[] = [
     { path: '', component: HomeComponent },
@@ -20,7 +21,8 @@ export const ROUTES: Route[] = [
     { path: 'cart', component: CartComponent },
     { path: 'testpage', component: TestpageComponent },
     { path: 'product/:id', component: ProductDetailComponent },
-    { path: 'orders', component: OrdersComponent}
+    { path: 'orders', component: OrdersComponent},
+    { path: 'orderdetails/:id', component: OrderdetailsComponent}
 ];
 
 bootstrapApplication(AppComponent, {
